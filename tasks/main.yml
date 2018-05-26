@@ -1,0 +1,13 @@
+---
+# tasks file for ansible-role-prometheus/
+
+- name: Install Prometheus
+  apt:
+    name:  prometheus
+    state: latest
+
+- name: Ensure prometheus service is running and enabled on startup
+  service:
+    name:    prometheus.service
+    state:   started
+    enabled: yes
